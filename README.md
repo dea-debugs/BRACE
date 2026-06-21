@@ -6,7 +6,7 @@ causal foundation model (**CausalPFN**) to estimate each patient's individual tr
 chemotherapy, and converts those estimates into binary recommendations that are validated against
 survival outcomes.
 
-![BRACE framework](workflow.png)
+![BRACE framework](Workflow.png)
 
 ## Overview
 
