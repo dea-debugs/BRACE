@@ -55,13 +55,11 @@ place them where `master.R` expects them.
 ## Usage
 
 ```r
-# from the "R Code" directory
-source("1_create_nice_dataset.R")   # build the harmonized dataset
-source("master.R")                  # fit BRACE, generate recommendations, and evaluate
+source("master.R")   # fit BRACE, generate recommendations, and evaluate
 ```
 
-`master.R` calls `run_causalpfn.py` for the CausalPFN estimator, then evaluates the resulting
-recommendations with the functions in `metrics.R`.
+`master.R` calls the estimators in `hte.R` (including CausalPFN), then evaluates the resulting
+recommendations with the functions in `metrics.R` and produces figures via `visualisations.R`.
 
 ## Authors
 
