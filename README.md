@@ -27,19 +27,14 @@ Kaplan–Meier curves, log-rank tests, and restricted mean survival time (RMST) 
 
 ```
 BRACE/
-├── R Code/
-│   ├── master.R                     # main pipeline: build data, fit, recommend, evaluate
-│   ├── 1_create_nice_dataset.R      # build the harmonized analysis dataset
-│   ├── hte.R                        # treatment-effect estimators (CausalPFN, causal tree, CSF)
-│   ├── feature_selection.R          # biological-input selection (correlation, gene sets, etc.)
-│   ├── metrics.R                    # survival evaluation (KM, log-rank, RMST, confusion matrix)
-│   ├── evaluation_20260617.R        # join recommendations back to gene expression
-│   ├── gene_comparisons_20260617.R  # per-gene expression by recommendation group
-│   ├── process_eval_data.R          # post-processing of evaluation outputs
-│   ├── utils.R                      # helpers
-│   └── run_causalpfn.py             # Python entry point for CausalPFN inference
-├── Datasets/                        # (not tracked) input gene-set definitions and exports
-└── Figures/                         # generated figures
+├── master.R              # main pipeline: build data, fit, recommend, evaluate
+├── hte.R                 # treatment-effect estimators (CausalPFN, causal tree, CSF)
+├── feature_selection.R   # biological-input selection (correlation, gene sets, etc.)
+├── metrics.R             # survival evaluation (KM, log-rank, RMST, confusion matrix)
+├── process_eval_data.R   # post-processing of evaluation outputs
+├── visualisations.R      # figure generation
+├── utils.R               # helper functions
+└── Workflow.png          # framework overview figure
 ```
 
 ## Requirements
@@ -68,17 +63,9 @@ source("master.R")                  # fit BRACE, generate recommendations, and e
 `master.R` calls `run_causalpfn.py` for the CausalPFN estimator, then evaluates the resulting
 recommendations with the functions in `metrics.R`.
 
-## Citation
-
-If you use BRACE, please cite:
-
-> Parkinson, D. E., Le, T. D., & Pinero, S. L. *BRACE: Biologically-grounded Recommendation And
-> Causal Estimation for Personalized Breast Cancer Chemotherapy.* (Manuscript under review.)
-
 ## Authors
 
-Deanna Elizabeth Parkinson, Thuc Duy Le, and Sindy Licette Pinero — School of Computer and
-Mathematical Sciences, The University of Adelaide.
+Deanna Elizabeth Parkinson, Thuc Duy Le, and Sindy Licette Pinero 
 
 ## License
 
