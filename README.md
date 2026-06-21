@@ -8,8 +8,6 @@ survival outcomes.
 
 ![BRACE framework](workflow.png)
 
-> *Replace `workflow.png` with the final workflow figure exported for the paper.*
-
 ## Overview
 
 For each patient *i*, BRACE estimates the individual treatment effect
