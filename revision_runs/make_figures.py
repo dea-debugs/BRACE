@@ -5,7 +5,6 @@ survival probability 0 to 1, time axis in months to 150.
 """
 import json
 import re
-from pathlib import Path
 
 import matplotlib
 matplotlib.use("Agg")
@@ -14,7 +13,8 @@ import numpy as np
 import pandas as pd
 from lifelines import KaplanMeierFitter
 
-REV = Path("/Users/sindypinero/Downloads/4_Deanna/BRACE/revision_runs")
+from brace_paths import REV
+
 OUT = REV / "figures"
 OUT.mkdir(exist_ok=True)
 RED, BLACK, GREY = "#d62728", "black", "0.5"

@@ -6,14 +6,15 @@ Each run: master.R -> evaluate_run.R -> policy_value_for_run.py (B = 500). Failu
 remaining runs continue. Afterwards the summary rows are appended in a fixed order (append_summary.py).
 Logs: revision_runs/logs/E/LABEL.log, revision_runs/logs/G/LABEL.log, revision_runs/logs/run_EG.log
 """
+import os
 import subprocess
 import sys
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from pathlib import Path
 
-REV = Path("/Users/sindypinero/Downloads/4_Deanna/BRACE/revision_runs")
-PY = "/Users/sindypinero/miniconda3/envs/brace/bin/python"
+from brace_paths import PYTHON as PY, REV
+
+os.environ["BRACE_PYTHON"] = PY  # R child processes call CausalPFN with the same interpreter
 CLEAN = REV / "7_PAM50_clean.csv"
 SEEDS = [123, 26, 314, 11, 24, 150, 111]  # Supplementary Table S2
 B_POLICY = 500

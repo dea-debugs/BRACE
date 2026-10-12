@@ -34,7 +34,7 @@ censoring_aware_outcome <- function(df_train, outcome, io_dir = file.path(CAUSAL
   unlink(out_file)
   write.csv(df_train[, c("patientID", "time", "event", "treatment")], in_file, row.names = FALSE)
 
-  script <- "/Users/sindypinero/Downloads/4_Deanna/BRACE/revision_runs/censoring_outcomes.py"
+  script <- CENSORING_SCRIPT
   status <- system(paste(shQuote(CAUSALPFN_PYTHON), shQuote(script), shQuote(in_file), shQuote(out_file),
                          method, horizon))
   if (status != 0 || !file.exists(out_file)) stop("censoring_outcomes.py failed")

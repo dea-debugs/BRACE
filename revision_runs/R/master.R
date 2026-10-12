@@ -47,10 +47,7 @@ if (!exists("CT_TYPE"))    CT_TYPE    <- "I"      # control theory: "I" or "II"
 if (!exists("CT_DIRECTION")) CT_DIRECTION <- ""   # control theory: "" (ranked by K), "in", "out"
 if (!exists("TRAIN_SUBSAMPLE")) TRAIN_SUBSAMPLE <- NULL  # run G: fraction of the training partition kept
 if (!exists("SUBSAMPLE_SEED"))  SUBSAMPLE_SEED  <- NULL  # run G: seed for that subsample (split still uses SEED)
-CLINICAL_FILE <- "/Users/sindypinero/Downloads/4_Deanna/BRACE/revision_runs/clinical_covariates.csv"
-REVISION_DIR <- "/Users/sindypinero/Downloads/4_Deanna/BRACE/revision_runs/"
-DATA_DIR     <- "/Users/sindypinero/Downloads/4_Deanna/Processed_Datasets/"
-GENE_SET_DIR <- "/Users/sindypinero/Downloads/4_Deanna/Gene_Sets/"
+source("paths.R")  # CLINICAL_FILE, REVISION_DIR, DATA_DIR, GENE_SET_DIR, CAUSALPFN_* (all built from BRACE_ROOT)
 run_started  <- Sys.time()
 
 # -- Import libraries --

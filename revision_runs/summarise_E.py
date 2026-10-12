@@ -7,14 +7,13 @@ Includes a reference row for the policy "no chemo for anyone".
 E_pam50_paired.csv: per input, the per seed (same split) difference PAM50 clean minus input in pooled RMST.
 """
 import json
-from pathlib import Path
 
 import numpy as np
 import pandas as pd
 
+from brace_paths import REV
 from run_EG import INPUTS, SEEDS
 
-REV = Path("/Users/sindypinero/Downloads/4_Deanna/BRACE/revision_runs")
 PAPER_TABLE3 = {"pearson100": 16.74, "gs1_driver_core": 17.92, "gs2_driver_ext_wgs": 13.51, "gs3_driver_found": 15.43,
                 "gs4A_tcga_cohorts": 12.79, "gs4B_tcga_subgroups": 17.12, "gs4C_tcga_all": 15.92,
                 "gs5_interval_screen": 17.23, "gs6_prolif_core_cc": 14.52, "gs7_pam50_clean": 18.94,

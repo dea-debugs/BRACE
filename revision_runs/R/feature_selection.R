@@ -6,6 +6,7 @@
 
 library(FSelectorRcpp)
 source("utils.R")
+if (!exists("GENE_SET_DIR")) source("paths.R")
 
 fs_mutual_information <- function(X_train, X_test, y_train, n = 100) {
   
@@ -43,7 +44,7 @@ fs_pearson_correlation <- function(X_train, X_test, y_train, n = 100) {
 }
 
 fs_gene_set <- function(X_train, X_test, set, n = 100,
-                        path = "/Users/sindypinero/Downloads/4_Deanna/Gene_Sets/",
+                        path = GENE_SET_DIR,
                         gene_file = NULL) {
   # Options for set:
   # 1, 2, 3, 4A, 4B, 4C, 5, 6, 7, 8, 9, 10, 11, 12
@@ -70,7 +71,7 @@ fs_gene_set <- function(X_train, X_test, set, n = 100,
 }
 
 fs_control_theory <- function(X_train, X_test, type, direction, n = 100,
-                              path = "/Users/sindypinero/Downloads/4_Deanna/Gene_Sets/") {
+                              path = GENE_SET_DIR) {
 # Options for type:
   # I, II
   # Options for direction:

@@ -34,7 +34,6 @@ import os
 import subprocess
 import sys
 import time
-from pathlib import Path
 
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 os.environ["OMP_NUM_THREADS"] = "1"
@@ -45,7 +44,8 @@ from scipy import stats
 from scipy.optimize import brentq
 from scipy.special import expit
 
-REV = Path("/Users/sindypinero/Downloads/4_Deanna/BRACE/revision_runs")
+from brace_paths import DATA_DIR, REV  # noqa: E402
+
 OUT = REV / "F_semisynthetic"
 LOG_DIR = REV / "logs" / "F"
 RSCRIPT_CSF = REV / "R" / "csf_fit.R"
@@ -66,7 +66,7 @@ def load_covariates():
     if cache.exists():
         return pd.read_csv(cache)
     genes = pd.read_csv(REV / "7_PAM50_clean.csv").Gene.tolist()
-    expr = pd.read_csv("/Users/sindypinero/Downloads/4_Deanna/Processed_Datasets/dataset_genes.csv",
+    expr = pd.read_csv(DATA_DIR / "dataset_genes.csv",
                        usecols=["patientID"] + genes)
     clin = pd.read_csv(REV / "clinical_covariates.csv")
     test_ids = set(pd.read_csv(REV / "A_baseline_pam50_seed123.csv").patientID)

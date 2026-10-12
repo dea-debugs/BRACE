@@ -13,7 +13,9 @@ import numpy as np
 import pandas as pd
 from scipy import stats
 
-SAVED_DEFAULT = Path("/Users/sindypinero/Downloads/4_Deanna/BRACE/Datasets/metabric_evaluation_data_20260617.csv")
+from brace_paths import DATASETS_DIR
+
+SAVED_DEFAULT = DATASETS_DIR / "metabric_evaluation_data_20260617.csv"
 
 
 def main():

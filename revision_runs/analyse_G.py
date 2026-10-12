@@ -9,14 +9,13 @@ Writes G_patient_spread.csv and G_confident_consensus.csv (+ .json settings) for
 policy_value_for_run.py, plus C3_restricted_to_G_confident.csv (C3's own recommendations on the same patients).
 """
 import json
-from pathlib import Path
 
 import numpy as np
 import pandas as pd
 
+from brace_paths import REV
 from run_EG import SEEDS
 
-REV = Path("/Users/sindypinero/Downloads/4_Deanna/BRACE/revision_runs")
 
 runs = []
 for s in SEEDS:

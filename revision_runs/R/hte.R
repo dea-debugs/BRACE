@@ -1,7 +1,5 @@
-# REVISION EDIT: full paths to the brace env Python and revision_runs/run_causalpfn.py
-CAUSALPFN_PYTHON <- "/Users/sindypinero/miniconda3/envs/brace/bin/python"
-CAUSALPFN_SCRIPT <- "/Users/sindypinero/Downloads/4_Deanna/BRACE/revision_runs/run_causalpfn.py"
-CAUSALPFN_IO_DIR <- "/Users/sindypinero/Downloads/4_Deanna/BRACE/revision_runs/causalpfn_io"
+# REVISION EDIT: full paths to the brace env Python and revision_runs/run_causalpfn.py (set in paths.R)
+if (!exists("CAUSALPFN_SCRIPT")) source("paths.R")  # CAUSALPFN_PYTHON, CAUSALPFN_SCRIPT, CAUSALPFN_IO_DIR
 
 hte_causal_pfn <- function(df_train, X_train, X_test, outcome = "rst_30") {
   # REVISION EDIT: exchange files live in CAUSALPFN_IO_DIR (run_causalpfn.py reads/writes its working directory)

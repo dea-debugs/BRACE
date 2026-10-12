@@ -7,17 +7,17 @@ From cBioPortal datahub brca_metabric data_clinical_sample.txt, joined on PATIEN
 Missing values are left as NA; median imputation with missing indicators is fitted on the training
 partition inside master.R (clinical_features.R), never here.
 """
-from pathlib import Path
 
 import pandas as pd
 
-BASE = Path("/Users/sindypinero/Downloads/4_Deanna")
-OUT = BASE / "BRACE/revision_runs/clinical_covariates.csv"
+from brace_paths import DATA_DIR, REV
+
+OUT = REV / "clinical_covariates.csv"
 
 FROM_DATASET = ["AGE_AT_DIAGNOSIS", "LYMPH_NODES_EXAMINED_POSITIVE", "NPI", "ER_IHC", "INFERRED_MENOPAUSAL_STATE"]
 
-ds = pd.read_csv(BASE / "Processed_Datasets/dataset_genes_and_clinical.csv", usecols=["patientID"] + FROM_DATASET)
-sam = pd.read_csv(BASE / "BRACE/revision_runs/cbioportal/data_clinical_sample.txt", sep="\t", comment="#")
+ds = pd.read_csv(DATA_DIR / "dataset_genes_and_clinical.csv", usecols=["patientID"] + FROM_DATASET)
+sam = pd.read_csv(REV / "cbioportal/data_clinical_sample.txt", sep="\t", comment="#")
 
 sam = pd.DataFrame({
     "patientID": sam.PATIENT_ID,

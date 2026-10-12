@@ -13,14 +13,11 @@ percentile CIs. Writes revision_runs/RUN_LABEL_policy_value.json.
 """
 import json
 import sys
-from pathlib import Path
 
 import numpy as np
 import pandas as pd
 
-BRACE = Path("/Users/sindypinero/Downloads/4_Deanna/BRACE")
-REV = BRACE / "revision_runs"
-PV_SCRIPT = BRACE / "policy_value_analysis/policy_value.py"
+from brace_paths import DATASETS_DIR, PV_SCRIPT, REV
 
 label = sys.argv[1]
 B = int(sys.argv[2]) if len(sys.argv) > 2 else 200
@@ -39,7 +36,7 @@ head = src.split("# ---------------- 0. validation")[0]
 old_U = "U = '/mnt/user-data/uploads/4_Deanna/BRACE/Datasets/analysis_extracts/'"
 old_S = "S = '/tmp/claude-0/-home-claude/b1f82c5d-573c-5bd8-b091-63beff174c30/scratchpad/pv/'"
 assert old_U in head and old_S in head
-head = head.replace(old_U, f"U = '{BRACE}/Datasets/analysis_extracts/'").replace(old_S, f"S = '{pv_inputs}/'")
+head = head.replace(old_U, f"U = '{DATASETS_DIR}/analysis_extracts/'").replace(old_S, f"S = '{pv_inputs}/'")
 head = head.replace("OUT = sys.argv[1] if len(sys.argv) > 1 else S", "OUT = S")
 ns = {"__name__": "policy_value"}
 exec(compile(head, str(PV_SCRIPT), "exec"), ns)

@@ -10,14 +10,13 @@ Reference rows use the same seven overlap populations (identical across inputs w
   no chemo for anyone: V(treat none) DR; chemo for everyone: V(treat all) DR; observed care: V(observed).
 """
 import json
-from pathlib import Path
 
 import numpy as np
 import pandas as pd
 
+from brace_paths import REV
 from run_EG import INPUTS, SEEDS
 
-REV = Path("/Users/sindypinero/Downloads/4_Deanna/BRACE/revision_runs")
 S = pd.read_csv(REV / "summary.csv").set_index("run_label")
 
 

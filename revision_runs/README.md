@@ -2,6 +2,25 @@
 
 This folder holds the code, the settings and the summary outputs behind the revised BRACE paper. `REPORT.md` describes every run and its results in detail. This README explains how to rebuild the software environment, how the pieces connect, and how to reproduce each run, table and figure.
 
+## Setting: BRACE_ROOT
+
+All paths are built from one environment variable, `BRACE_ROOT`: the folder that holds the data. If it is not set, it defaults to the parent folder of this repository. It is read in one place for each language: `brace_paths.py` for Python and `R/paths.R` for R. Both build the same layout:
+
+| Path | Contents |
+|---|---|
+| `BRACE_ROOT/Processed_Datasets/` | `dataset_genes.csv` and `dataset_genes_and_clinical.csv` |
+| `BRACE_ROOT/Gene_Sets/` | gene set files, for example `7_PAM50.csv` (used by run A) |
+| `BRACE_ROOT/BRACE/Datasets/` | `analysis_extracts/` (policy value) and `metabric_evaluation_data_20260617.csv` (the paper export used to check run A) |
+| `revision_runs/` (this folder) | scripts, `clinical_covariates.csv`, `cbioportal/`, `cache/` and all per run outputs |
+| `policy_value_analysis/` (in this repository) | `policy_value.py` |
+
+```bash
+export BRACE_ROOT=/path/to/folder/with/the/data    # optional; default is the parent of the repository
+export BRACE_PYTHON=$(conda run -n brace which python)   # optional; see below
+```
+
+`BRACE_PYTHON` is an optional second setting: the interpreter of the `brace` environment that R uses to call CausalPFN. If it is not set, R uses the `python` on the PATH, so either activate `brace` before running R or set `BRACE_PYTHON`. `run_BCD.sh` and `run_EG.py` pass their own interpreter on to R automatically.
+
 ## What is here and what is not
 
 Included: all Python and shell scripts, the edited R pipeline in `R/`, the clean PAM50 list, the clinical covariate table, the summary tables of runs A to G, the run F summary, the figures and the report. The policy value analysis that the revision reuses sits in `../policy_value_analysis/`.
@@ -37,20 +56,9 @@ Check your copy with `shasum -a 256 causalpfn_v0.pt` in the Hugging Face cache f
 
 The R side used R 4.5.3 with survival, survRM2, grf 2.6.1, caret, zeallot, FSelectorRcpp, randomForestSRC, jsonlite and causalTree (installed from GitHub). With R 4.5 and recent compilers causalTree needs extra flags. Use `R/Makevars.causalTree` through `R_MAKEVARS_USER` when installing it.
 
-### Paths
+### Data
 
-The scripts use absolute paths from the machine where the runs were made (`/Users/sindypinero/Downloads/4_Deanna/...`). Before running anything elsewhere, edit these constants:
-
-| File | Constants |
-|---|---|
-| `R/hte.R` | `CAUSALPFN_PYTHON`, `CAUSALPFN_SCRIPT`, `CAUSALPFN_IO_DIR` |
-| `R/master.R` | `CLINICAL_FILE`, `REVISION_DIR`, `DATA_DIR`, `GENE_SET_DIR` |
-| `R/feature_selection.R` | default `path` arguments |
-| `R/evaluate_run.R` | `REVISION_DIR` |
-| `R/revision_helpers.R` | path to `censoring_outcomes.py` |
-| Python scripts and `run_BCD.sh` | `REV`, `BRACE`, `BASE` and `PY` near the top |
-
-The expression data are read from `DATA_DIR/dataset_genes.csv`, which is built by `R/1_create_nice_dataset.R`. Gene sets are read from `GENE_SET_DIR`.
+The expression data are read from `BRACE_ROOT/Processed_Datasets/dataset_genes.csv`, which is built by `R/1_create_nice_dataset.R`. The first run caches it as `revision_runs/cache/dataset_genes.rds`, and the cache is rebuilt automatically if the CSV changes.
 
 ## 2. How R calls CausalPFN
 

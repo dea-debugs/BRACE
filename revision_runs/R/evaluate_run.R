@@ -7,7 +7,7 @@
 library(survRM2)
 library(jsonlite)
 
-REVISION_DIR <- "/Users/sindypinero/Downloads/4_Deanna/BRACE/revision_runs/"
+source("paths.R")  # REVISION_DIR
 TAU <- 150
 
 label <- commandArgs(trailingOnly = TRUE)[1]

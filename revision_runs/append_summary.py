@@ -7,11 +7,11 @@ whose recommendations this run is compared with (n_changed_vs_ref). A label alre
 """
 import json
 import sys
-from pathlib import Path
 
 import pandas as pd
 
-REV = Path("/Users/sindypinero/Downloads/4_Deanna/BRACE/revision_runs")
+from brace_paths import REV
+
 SUMMARY = REV / "summary.csv"
 
 OUTCOME_ENCODING = {

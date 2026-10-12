@@ -3,8 +3,9 @@
 # Each run: master.R (CausalPFN, writes LABEL.csv/.json) -> evaluate_run.R (stratified RMST at 150)
 #           -> policy_value_for_run.py (overlap policy value, B = 500) -> append_summary.py
 set -e
-REV=/Users/sindypinero/Downloads/4_Deanna/BRACE/revision_runs
-PY=/Users/sindypinero/miniconda3/envs/brace/bin/python
+REV=${0:A:h}                       # this folder (revision_runs); data paths come from BRACE_ROOT, see R/paths.R
+PY=${BRACE_PYTHON:-$(command -v python)}
+export BRACE_PYTHON=$PY            # R calls CausalPFN with the same interpreter
 CLEAN=$REV/7_PAM50_clean.csv
 cd $REV/R
 
