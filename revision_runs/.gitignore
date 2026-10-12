@@ -1,0 +1,17 @@
+# inputs, caches and logs (rebuilt or downloaded; see README.md)
+cache/
+causalpfn_io/
+cbioportal/
+policy_value_inputs/
+logs/
+__pycache__/
+F_semisynthetic/*
+!F_semisynthetic/F_summary.csv
+*.log
+*.pdf
+# per run outputs: LABEL.csv, LABEL.json, LABEL_eval.json, LABEL_policy_value.json, LABEL_outcome.json
+*_seed[0-9]*
+E_*_s[0-9]*
+G_*_s[0-9]*
+G_confident_consensus.*
+C3_restricted_to_G_confident.*

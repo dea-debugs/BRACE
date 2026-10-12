@@ -1,0 +1,6 @@
+# Makevars used to build causalTree (susanathey/causalTree, GitHub) on R 4.5.3 arm64, 2026-10-11:
+#   R_MAKEVARS_USER=Makevars.causalTree Rscript -e 'remotes::install_github("susanathey/causalTree")'
+# gnu17: old-style C declarations fail under C23; R_Free etc.: R 4.5 removed Free/Calloc/Realloc; gettext: libintl.h
+CC = clang -arch arm64 -std=gnu17
+CPPFLAGS += -I/opt/homebrew/opt/gettext/include -DFree=R_Free -DCalloc=R_Calloc -DRealloc=R_Realloc
+LDFLAGS += -L/opt/homebrew/opt/gettext/lib -lintl

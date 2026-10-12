@@ -1,0 +1,831 @@
+{
+ "validation": {
+  "arm0": 19.191042312049404,
+  "arm1": 6.236651964381522,
+  "pooled": 18.93688490522787
+ },
+ "diagnostics": {
+  "clinical": {
+   "propensity_treated_pct": [
+    0.02,
+    0.074,
+    0.315,
+    0.692,
+    0.884,
+    0.981,
+    0.995
+   ],
+   "propensity_untreated_pct": [
+    0.001,
+    0.003,
+    0.011,
+    0.034,
+    0.096,
+    0.443,
+    0.814
+   ],
+   "share_outside_0.05_0.95": 0.508,
+   "ESS_treated": 2.5,
+   "n_treated": 136,
+   "ESS_untreated": 33.2,
+   "n_untreated": 458,
+   "propensity_among_BRACE_rec_chemo_pct": [
+    0.001,
+    0.001,
+    0.01,
+    0.224,
+    0.66,
+    0.955,
+    0.985
+   ],
+   "smd_clinical": {
+    "AGE_AT_DIAGNOSIS": {
+     "before": -1.229,
+     "after_IPW": 0.383
+    },
+    "LYMPH_NODES_EXAMINED_POSITIVE": {
+     "before": 0.57,
+     "after_IPW": -1.651
+    },
+    "LYMPH_NODES_EXAMINED_POSITIVE_miss": {
+     "before": 0.058,
+     "after_IPW": 2.736
+    },
+    "NPI": {
+     "before": 1.263,
+     "after_IPW": -2.059
+    },
+    "ER_IHC": {
+     "before": -1.258,
+     "after_IPW": 0.612
+    },
+    "ER_IHC_miss": {
+     "before": -0.121,
+     "after_IPW": 5.082
+    },
+    "INFERRED_MENOPAUSAL_STATE": {
+     "before": -0.819,
+     "after_IPW": 0.641
+    },
+    "GRADE": {
+     "before": 0.91,
+     "after_IPW": 0.005
+    },
+    "GRADE_miss": {
+     "before": -0.277,
+     "after_IPW": 2.895
+    },
+    "TUMOR_SIZE": {
+     "before": 0.484,
+     "after_IPW": 0.1
+    },
+    "TUMOR_SIZE_miss": {
+     "before": 0.068,
+     "after_IPW": 4.695
+    },
+    "TUMOR_STAGE": {
+     "before": 0.639,
+     "after_IPW": 0.282
+    },
+    "TUMOR_STAGE_miss": {
+     "before": -0.018,
+     "after_IPW": 1.19
+    },
+    "HER2": {
+     "before": 0.27,
+     "after_IPW": -0.829
+    },
+    "PR": {
+     "before": -0.581,
+     "after_IPW": -0.579
+    }
+   }
+  },
+  "pam50": {
+   "propensity_treated_pct": [
+    0.027,
+    0.049,
+    0.17,
+    0.41,
+    0.618,
+    0.811,
+    0.885
+   ],
+   "propensity_untreated_pct": [
+    0.009,
+    0.016,
+    0.038,
+    0.072,
+    0.166,
+    0.582,
+    0.761
+   ],
+   "share_outside_0.05_0.95": 0.301,
+   "ESS_treated": 48.7,
+   "n_treated": 136,
+   "ESS_untreated": 383.7,
+   "n_untreated": 458,
+   "propensity_among_BRACE_rec_chemo_pct": [
+    0.014,
+    0.018,
+    0.099,
+    0.315,
+    0.592,
+    0.826,
+    0.905
+   ],
+   "smd_clinical": {
+    "AGE_AT_DIAGNOSIS": {
+     "before": -1.229,
+     "after_IPW": -0.942
+    },
+    "LYMPH_NODES_EXAMINED_POSITIVE": {
+     "before": 0.57,
+     "after_IPW": 0.416
+    },
+    "LYMPH_NODES_EXAMINED_POSITIVE_miss": {
+     "before": 0.058,
+     "after_IPW": -0.093
+    },
+    "NPI": {
+     "before": 1.263,
+     "after_IPW": 0.996
+    },
+    "ER_IHC": {
+     "before": -1.258,
+     "after_IPW": -0.34
+    },
+    "ER_IHC_miss": {
+     "before": -0.121,
+     "after_IPW": -0.216
+    },
+    "INFERRED_MENOPAUSAL_STATE": {
+     "before": -0.819,
+     "after_IPW": -0.493
+    },
+    "GRADE": {
+     "before": 0.91,
+     "after_IPW": 0.489
+    },
+    "GRADE_miss": {
+     "before": -0.277,
+     "after_IPW": -0.331
+    },
+    "TUMOR_SIZE": {
+     "before": 0.484,
+     "after_IPW": 0.589
+    },
+    "TUMOR_SIZE_miss": {
+     "before": 0.068,
+     "after_IPW": -0.021
+    },
+    "TUMOR_STAGE": {
+     "before": 0.639,
+     "after_IPW": 0.747
+    },
+    "TUMOR_STAGE_miss": {
+     "before": -0.018,
+     "after_IPW": 0.089
+    },
+    "HER2": {
+     "before": 0.27,
+     "after_IPW": -0.162
+    },
+    "PR": {
+     "before": -0.581,
+     "after_IPW": 0.094
+    }
+   }
+  },
+  "clinical+pam50": {
+   "propensity_treated_pct": [
+    0.01,
+    0.055,
+    0.375,
+    0.679,
+    0.923,
+    0.988,
+    0.996
+   ],
+   "propensity_untreated_pct": [
+    0.0,
+    0.001,
+    0.006,
+    0.023,
+    0.078,
+    0.451,
+    0.875
+   ],
+   "share_outside_0.05_0.95": 0.576,
+   "ESS_treated": 5.5,
+   "n_treated": 136,
+   "ESS_untreated": 6.1,
+   "n_untreated": 458,
+   "propensity_among_BRACE_rec_chemo_pct": [
+    0.001,
+    0.001,
+    0.013,
+    0.14,
+    0.65,
+    0.973,
+    0.998
+   ],
+   "smd_clinical": {
+    "AGE_AT_DIAGNOSIS": {
+     "before": -1.229,
+     "after_IPW": 1.085
+    },
+    "LYMPH_NODES_EXAMINED_POSITIVE": {
+     "before": 0.57,
+     "after_IPW": -1.787
+    },
+    "LYMPH_NODES_EXAMINED_POSITIVE_miss": {
+     "before": 0.058,
+     "after_IPW": 1.759
+    },
+    "NPI": {
+     "before": 1.263,
+     "after_IPW": -2.043
+    },
+    "ER_IHC": {
+     "before": -1.258,
+     "after_IPW": 1.161
+    },
+    "ER_IHC_miss": {
+     "before": -0.121,
+     "after_IPW": 3.242
+    },
+    "INFERRED_MENOPAUSAL_STATE": {
+     "before": -0.819,
+     "after_IPW": 1.135
+    },
+    "GRADE": {
+     "before": 0.91,
+     "after_IPW": -0.428
+    },
+    "GRADE_miss": {
+     "before": -0.277,
+     "after_IPW": 1.85
+    },
+    "TUMOR_SIZE": {
+     "before": 0.484,
+     "after_IPW": 0.323
+    },
+    "TUMOR_SIZE_miss": {
+     "before": 0.068,
+     "after_IPW": 2.996
+    },
+    "TUMOR_STAGE": {
+     "before": 0.639,
+     "after_IPW": 0.143
+    },
+    "TUMOR_STAGE_miss": {
+     "before": -0.018,
+     "after_IPW": 1.14
+    },
+    "HER2": {
+     "before": 0.27,
+     "after_IPW": -1.616
+    },
+    "PR": {
+     "before": -0.581,
+     "after_IPW": -0.092
+    }
+   }
+  },
+  "clinical+pam50+cotreatment": {
+   "propensity_treated_pct": [
+    0.011,
+    0.046,
+    0.35,
+    0.728,
+    0.946,
+    0.991,
+    0.996
+   ],
+   "propensity_untreated_pct": [
+    0.0,
+    0.001,
+    0.005,
+    0.018,
+    0.066,
+    0.423,
+    0.795
+   ],
+   "share_outside_0.05_0.95": 0.608,
+   "ESS_treated": 5.9,
+   "n_treated": 136,
+   "ESS_untreated": 15.6,
+   "n_untreated": 458,
+   "propensity_among_BRACE_rec_chemo_pct": [
+    0.001,
+    0.001,
+    0.011,
+    0.164,
+    0.689,
+    0.976,
+    0.996
+   ],
+   "smd_clinical": {
+    "AGE_AT_DIAGNOSIS": {
+     "before": -1.229,
+     "after_IPW": 0.61
+    },
+    "LYMPH_NODES_EXAMINED_POSITIVE": {
+     "before": 0.57,
+     "after_IPW": -1.117
+    },
+    "LYMPH_NODES_EXAMINED_POSITIVE_miss": {
+     "before": 0.058,
+     "after_IPW": 1.651
+    },
+    "NPI": {
+     "before": 1.263,
+     "after_IPW": -1.471
+    },
+    "ER_IHC": {
+     "before": -1.258,
+     "after_IPW": 0.634
+    },
+    "ER_IHC_miss": {
+     "before": -0.121,
+     "after_IPW": 3.098
+    },
+    "INFERRED_MENOPAUSAL_STATE": {
+     "before": -0.819,
+     "after_IPW": 0.686
+    },
+    "GRADE": {
+     "before": 0.91,
+     "after_IPW": -0.092
+    },
+    "GRADE_miss": {
+     "before": -0.277,
+     "after_IPW": 1.713
+    },
+    "TUMOR_SIZE": {
+     "before": 0.484,
+     "after_IPW": 0.298
+    },
+    "TUMOR_SIZE_miss": {
+     "before": 0.068,
+     "after_IPW": 2.875
+    },
+    "TUMOR_STAGE": {
+     "before": 0.639,
+     "after_IPW": 0.209
+    },
+    "TUMOR_STAGE_miss": {
+     "before": -0.018,
+     "after_IPW": 0.892
+    },
+    "HER2": {
+     "before": 0.27,
+     "after_IPW": -1.07
+    },
+    "PR": {
+     "before": -0.581,
+     "after_IPW": -0.359
+    }
+   }
+  }
+ },
+ "followup_missingness": {
+  "test594": {
+   "n": 594,
+   "deaths": 333,
+   "median_follow_up_reverse_KM": 194.2,
+   "share_followed_150m_or_event": 0.79,
+   "censored_before_150m": 125,
+   "missing": {
+    "AGE_AT_DIAGNOSIS": 0,
+    "LYMPH_NODES_EXAMINED_POSITIVE": 29,
+    "NPI": 0,
+    "ER_IHC": 11,
+    "INFERRED_MENOPAUSAL_STATE": 0,
+    "GRADE": 34,
+    "TUMOR_SIZE": 9,
+    "TUMOR_STAGE": 152,
+    "HER2": 0,
+    "PR": 0,
+    "HORMONE": 0,
+    "RADIO": 0
+   }
+  },
+  "train1386": {
+   "n": 1386,
+   "deaths": 810,
+   "median_follow_up_reverse_KM": 195.9,
+   "share_followed_150m_or_event": 0.803,
+   "censored_before_150m": 273,
+   "missing": {
+    "AGE_AT_DIAGNOSIS": 0,
+    "LYMPH_NODES_EXAMINED_POSITIVE": 47,
+    "NPI": 0,
+    "ER_IHC": 32,
+    "INFERRED_MENOPAUSAL_STATE": 0,
+    "GRADE": 54,
+    "TUMOR_SIZE": 17,
+    "TUMOR_STAGE": 362,
+    "HER2": 0,
+    "PR": 0,
+    "HORMONE": 0,
+    "RADIO": 0
+   }
+  },
+  "all1980": {
+   "n": 1980,
+   "deaths": 1143,
+   "median_follow_up_reverse_KM": 195.5,
+   "share_followed_150m_or_event": 0.799,
+   "censored_before_150m": 398,
+   "missing": {
+    "AGE_AT_DIAGNOSIS": 0,
+    "LYMPH_NODES_EXAMINED_POSITIVE": 76,
+    "NPI": 0,
+    "ER_IHC": 43,
+    "INFERRED_MENOPAUSAL_STATE": 0,
+    "GRADE": 88,
+    "TUMOR_SIZE": 26,
+    "TUMOR_STAGE": 514,
+    "HER2": 0,
+    "PR": 0,
+    "HORMONE": 0,
+    "RADIO": 0
+   }
+  }
+ },
+ "policy_values": {
+  "clinical|train": {
+   "BRACE": {
+    "IPW": 102.47629021203743,
+    "DR": 105.3515286635131,
+    "ESS": 65.14798902407453,
+    "n_matching": 448
+   },
+   "treat_none": {
+    "IPW": 101.46086834663197,
+    "DR": 105.5597553067522,
+    "ESS": 66.23017517796382,
+    "n_matching": 458
+   },
+   "treat_all": {
+    "IPW": 86.77109083030096,
+    "DR": 94.3719918879185,
+    "ESS": 23.18449193482717,
+    "n_matching": 136
+   },
+   "observed": {
+    "IPW": 115.37164111916684,
+    "DR": 115.37164111916684,
+    "ESS": 456.07503894706787,
+    "n_matching": 594
+   }
+  },
+  "clinical|crossfit": {
+   "BRACE": {
+    "IPW": 106.49395760549613,
+    "DR": 125.90013009744915,
+    "ESS": 87.30749724163618,
+    "n_matching": 448
+   },
+   "treat_none": {
+    "IPW": 107.32193029477773,
+    "DR": 112.19348196040414,
+    "ESS": 119.38089080569785,
+    "n_matching": 458
+   },
+   "treat_all": {
+    "IPW": 87.19323672669965,
+    "DR": 103.86731084296886,
+    "ESS": 22.762233050177777,
+    "n_matching": 136
+   },
+   "observed": {
+    "IPW": 115.37164111916684,
+    "DR": 115.37164111916684,
+    "ESS": 456.07503894706787,
+    "n_matching": 594
+   }
+  },
+  "clinical|train|overlap_0.1_0.9": {
+   "BRACE": {
+    "IPW": 109.24564385808102,
+    "DR": 108.41889572027051,
+    "ESS": 74.67658303646853,
+    "n_matching": 118
+   },
+   "treat_none": {
+    "IPW": 109.53646169523587,
+    "DR": 107.55423853825285,
+    "ESS": 70.07379558696584,
+    "n_matching": 109
+   },
+   "treat_all": {
+    "IPW": 109.9282166585821,
+    "DR": 107.83447894374345,
+    "ESS": 38.063196828767005,
+    "n_matching": 99
+   },
+   "observed": {
+    "IPW": 110.29025383120653,
+    "DR": 110.29025383120653,
+    "ESS": 149.63583379380955,
+    "n_matching": 208
+   },
+   "n_overlap": 208,
+   "reclassified_in_overlap": 90
+  },
+  "pam50|train": {
+   "BRACE": {
+    "IPW": 118.2087243821628,
+    "DR": 117.5823662686498,
+    "ESS": 243.11562349123446,
+    "n_matching": 448
+   },
+   "treat_none": {
+    "IPW": 116.47610773396826,
+    "DR": 114.99050352899229,
+    "ESS": 311.8407591067602,
+    "n_matching": 458
+   },
+   "treat_all": {
+    "IPW": 117.20498692068722,
+    "DR": 127.56649430048967,
+    "ESS": 35.01110141961495,
+    "n_matching": 136
+   },
+   "observed": {
+    "IPW": 115.37164111916684,
+    "DR": 115.37164111916684,
+    "ESS": 456.07503894706787,
+    "n_matching": 594
+   }
+  },
+  "pam50|crossfit": {
+   "BRACE": {
+    "IPW": 121.98945168578128,
+    "DR": 123.98038662975216,
+    "ESS": 124.90942629201052,
+    "n_matching": 448
+   },
+   "treat_none": {
+    "IPW": 118.09035143770258,
+    "DR": 119.56935704932297,
+    "ESS": 199.03302302975382,
+    "n_matching": 458
+   },
+   "treat_all": {
+    "IPW": 115.39139980374742,
+    "DR": 120.84450356867245,
+    "ESS": 27.94502913050069,
+    "n_matching": 136
+   },
+   "observed": {
+    "IPW": 115.37164111916684,
+    "DR": 115.37164111916684,
+    "ESS": 456.07503894706787,
+    "n_matching": 594
+   }
+  },
+  "pam50|train|overlap_0.1_0.9": {
+   "BRACE": {
+    "IPW": 112.31955586185272,
+    "DR": 110.5250889300277,
+    "ESS": 111.54235505509139,
+    "n_matching": 180
+   },
+   "treat_none": {
+    "IPW": 111.75058870269714,
+    "DR": 109.67236866685468,
+    "ESS": 113.70625249216836,
+    "n_matching": 178
+   },
+   "treat_all": {
+    "IPW": 102.27821061671587,
+    "DR": 107.00011615702414,
+    "ESS": 57.54426758538562,
+    "n_matching": 115
+   },
+   "observed": {
+    "IPW": 108.14228940075756,
+    "DR": 108.14228940075756,
+    "ESS": 219.08506163354477,
+    "n_matching": 293
+   },
+   "n_overlap": 293,
+   "reclassified_in_overlap": 113
+  },
+  "clinical+pam50|train": {
+   "BRACE": {
+    "IPW": 101.36047157003136,
+    "DR": 100.08487233896956,
+    "ESS": 65.20597699406589,
+    "n_matching": 448
+   },
+   "treat_none": {
+    "IPW": 101.2244257909721,
+    "DR": 106.11082637268062,
+    "ESS": 66.53110830552667,
+    "n_matching": 458
+   },
+   "treat_all": {
+    "IPW": 91.40802051544198,
+    "DR": 96.8310114052084,
+    "ESS": 17.22139877337763,
+    "n_matching": 136
+   },
+   "observed": {
+    "IPW": 115.37164111916684,
+    "DR": 115.37164111916684,
+    "ESS": 456.07503894706787,
+    "n_matching": 594
+   }
+  },
+  "clinical+pam50|crossfit": {
+   "BRACE": {
+    "IPW": 107.64956099860433,
+    "DR": 128.6196382160997,
+    "ESS": 92.43382373774062,
+    "n_matching": 448
+   },
+   "treat_none": {
+    "IPW": 104.13260353249123,
+    "DR": 113.00426256272002,
+    "ESS": 90.8528412388371,
+    "n_matching": 458
+   },
+   "treat_all": {
+    "IPW": 100.84142327363861,
+    "DR": 123.53482485697063,
+    "ESS": 18.654554321058477,
+    "n_matching": 136
+   },
+   "observed": {
+    "IPW": 115.37164111916684,
+    "DR": 115.37164111916684,
+    "ESS": 456.07503894706787,
+    "n_matching": 594
+   }
+  },
+  "clinical+pam50|train|overlap_0.1_0.9": {
+   "BRACE": {
+    "IPW": 112.4999137054673,
+    "DR": 112.96012167964855,
+    "ESS": 52.74210891442618,
+    "n_matching": 95
+   },
+   "treat_none": {
+    "IPW": 106.12733391890374,
+    "DR": 106.28241959559465,
+    "ESS": 47.118573677731625,
+    "n_matching": 89
+   },
+   "treat_all": {
+    "IPW": 109.9866849308985,
+    "DR": 112.55537808408663,
+    "ESS": 40.42456278440453,
+    "n_matching": 84
+   },
+   "observed": {
+    "IPW": 112.46339583050076,
+    "DR": 112.46339583050076,
+    "ESS": 123.18316000361924,
+    "n_matching": 173
+   },
+   "n_overlap": 173,
+   "reclassified_in_overlap": 78
+  },
+  "clinical+pam50+cotreatment|train": {
+   "BRACE": {
+    "IPW": 101.62770764079606,
+    "DR": 103.01449593595693,
+    "ESS": 63.755044038660564,
+    "n_matching": 448
+   },
+   "treat_none": {
+    "IPW": 102.13544567497901,
+    "DR": 108.31260398411423,
+    "ESS": 64.09498154753908,
+    "n_matching": 458
+   },
+   "treat_all": {
+    "IPW": 92.86622646676177,
+    "DR": 94.27178304163098,
+    "ESS": 18.772422754543754,
+    "n_matching": 136
+   },
+   "observed": {
+    "IPW": 115.37164111916684,
+    "DR": 115.37164111916684,
+    "ESS": 456.07503894706787,
+    "n_matching": 594
+   }
+  },
+  "clinical+pam50+cotreatment|crossfit": {
+   "BRACE": {
+    "IPW": 111.03605201201051,
+    "DR": 133.48485193684579,
+    "ESS": 95.6747460715033,
+    "n_matching": 448
+   },
+   "treat_none": {
+    "IPW": 108.21011732729882,
+    "DR": 115.28227397490761,
+    "ESS": 106.46812319423789,
+    "n_matching": 458
+   },
+   "treat_all": {
+    "IPW": 102.54577385717212,
+    "DR": 125.97602919567841,
+    "ESS": 18.345041546218383,
+    "n_matching": 136
+   },
+   "observed": {
+    "IPW": 115.37164111916684,
+    "DR": 115.37164111916684,
+    "ESS": 456.07503894706787,
+    "n_matching": 594
+   }
+  },
+  "clinical+pam50+cotreatment|train|overlap_0.1_0.9": {
+   "BRACE": {
+    "IPW": 113.21112413534523,
+    "DR": 113.01708684888818,
+    "ESS": 50.43090759802604,
+    "n_matching": 96
+   },
+   "treat_none": {
+    "IPW": 113.07565699044095,
+    "DR": 111.34758285367643,
+    "ESS": 54.63616833880308,
+    "n_matching": 88
+   },
+   "treat_all": {
+    "IPW": 115.38391850539779,
+    "DR": 116.86103310657903,
+    "ESS": 32.68779183158579,
+    "n_matching": 82
+   },
+   "observed": {
+    "IPW": 114.38238941468472,
+    "DR": 114.38238941468472,
+    "ESS": 119.11229241570804,
+    "n_matching": 170
+   },
+   "n_overlap": 170,
+   "reclassified_in_overlap": 74
+  }
+ },
+ "bootstrap_CI": {
+  "B": 500,
+  "V(BRACE) IPW": [
+   85.45,
+   120.29
+  ],
+  "V(BRACE) DR": [
+   68.75,
+   122.38
+  ],
+  "V(observed)": [
+   111.84,
+   119.27
+  ],
+  "V(BRACE) - V(observed) IPW": [
+   -29.82,
+   3.47
+  ],
+  "V(BRACE) - V(observed) DR": [
+   -46.12,
+   5.87
+  ],
+  "V(BRACE) - V(treat none) IPW": [
+   -16.24,
+   15.16
+  ],
+  "V(BRACE) - V(treat none) DR": [
+   -39.6,
+   12.73
+  ],
+  "V(treat all) - V(treat none) DR": [
+   -51.08,
+   24.96
+  ],
+  "overlap: V(BRACE) - V(observed) DR": [
+   -17.03,
+   10.64
+  ],
+  "overlap: V(BRACE) - V(treat none) DR": [
+   -11.91,
+   16.56
+  ],
+  "overlap: V(BRACE) - V(treat none) IPW": [
+   -11.67,
+   14.77
+  ],
+  "overlap: V(treat all) - V(treat none) DR": [
+   -30.35,
+   35.34
+  ]
+ }
+}
