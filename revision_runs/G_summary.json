@@ -1,0 +1,26 @@
+{
+  "n_test": 594,
+  "n_confident": 378,
+  "share_confident": 0.6363636363636364,
+  "confident_rec_chemo": 32,
+  "confident_rec_no_chemo": 346,
+  "abstain": 216,
+  "confident_by_observed_arm": {
+    "no_chemo": 299,
+    "chemo": 79
+  },
+  "share_confident_among_C3_rec_chemo": 0.3047619047619048,
+  "share_confident_among_C3_rec_no_chemo": 0.7075664621676891,
+  "consensus_matches_C3_full_train_rec": 1.0,
+  "median_range_est_effect": 20.896786499999997,
+  "n_positive_distribution": {
+    "0": 346,
+    "1": 61,
+    "2": 39,
+    "3": 36,
+    "4": 28,
+    "5": 20,
+    "6": 32,
+    "7": 32
+  }
+}
